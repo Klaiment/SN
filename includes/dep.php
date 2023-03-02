@@ -8,6 +8,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     echo $_SESSION['pseudo']."<br>";
     echo $_SESSION['email']."<br>";
     echo $_SESSION['avatar']."<br>";*/
+
 } else {
     //On renvoie vers la page de login
     if ($_SERVER['REQUEST_URI'] == "/login.php" || $_SERVER['REQUEST_URI'] == "/register.php") {

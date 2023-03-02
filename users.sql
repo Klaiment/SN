@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 02 mars 2023 à 19:53
+-- Généré le : jeu. 02 mars 2023 à 23:57
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `twitter`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `likes` int(11) NOT NULL,
+  `share` int(11) NOT NULL,
+  `comment` int(11) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -47,6 +62,12 @@ INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `avatar`) VALUES
 --
 
 --
+-- Index pour la table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -55,6 +76,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
