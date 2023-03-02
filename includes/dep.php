@@ -1,4 +1,6 @@
+<link rel="icon" href="/assets/favicon2.PNG" type="image/png">
 <?php
+echo 'dep';
 session_start();
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     //Compte connecté
@@ -21,7 +23,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://flowbite.com/docs/flowbite.min.js"></script>
 <script src="https://flowbite.com/docs/datepicker.min.js"></script>
-<link rel="icon" href="/assets/favicon2.PNG">
+
 <script src="/dist/toasteur.min.js"></script>
 <link rel="stylesheet" href="/dist/themes/toasteur-default.min.css">
 <script>
