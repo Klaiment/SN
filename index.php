@@ -5,13 +5,12 @@
     include 'includes/dep.php';
     ?>
 </head>
+<body>
 <?php
-if (isset($_SESSION['id']) && !empty($_SESSION['id'])){
-    //Compte connecté
-}else{
-    //On renvoie vers la page de login
-//    include 'login.php';
-header('Location: login.php');
-}
+echo "<title>Accueil - FriendZ</title>";
+include_once './includes/sidebar.php'
 ?>
+
+
+</body>
 </html>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 fév. 2023 à 17:21
+-- Généré le : jeu. 02 mars 2023 à 23:57
 -- Version du serveur : 10.4.24-MariaDB
--- Version de PHP : 7.4.29
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `likes` int(11) NOT NULL,
+  `share` int(11) NOT NULL,
+  `comment` int(11) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -31,19 +46,26 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `pseudo` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL DEFAULT '/users/avatar/default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `pseudo`, `email`, `password`) VALUES
-(1, 'Admin', 'admin@friendz.org', 'd033e22ae348aeb5660fc2140aec35850c4da997');
+INSERT INTO `users` (`id`, `pseudo`, `email`, `password`, `avatar`) VALUES
+(1, 'Admin', 'admin@friendz.org', 'd033e22ae348aeb5660fc2140aec35850c4da997', '/users/avatar/default.png');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
@@ -54,6 +76,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`

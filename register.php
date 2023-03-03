@@ -1,6 +1,10 @@
 <head>
     <?php
+
     include 'includes/dep.php';
+    if (isset($_SESSION['id'])){
+        header('Location: /');
+    }
     echo "<title>Inscription - FriendZ</title>";
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);

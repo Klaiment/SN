@@ -1,6 +1,10 @@
 <head>
     <?php
+
     include 'includes/dep.php';
+    if (isset($_SESSION['id'])){
+        header('Location: /');
+    }
     echo "<title>Connexion - FriendZ</title>";
     ?>
 </head>
@@ -80,7 +84,12 @@ if (isset($_POST['submiter'])){
 
                     $data = $req->fetch();
                     if ($data['password'] == $password){
+                        $_SESSION['id'] = $data['id'];
+                        $_SESSION['pseudo'] = $data['pseudo'];
+                        $_SESSION['email'] = $data['email'];
+                        $_SESSION['avatar'] = $data['avatar'];
                         echo "<script>createsuccess('Connexion en cours...')</script>";
+                        echo '<meta http-equiv="refresh" content="1;URL=/">';
                     }else{
                         echo "<script>createerror('Mot de passe incorrect')</script>";
                     }
