@@ -3,18 +3,18 @@
 <head>
     <?php
     include './includes/dep.php';
-    include_once './app/GetUserPosts.php';
-    $GetUserPosts = new GetUserPosts();
+
     ?>
+    <title>Mon Profil - FriendZ</title>
 </head>
 <body>
 <?php
-echo "<title>Accueil - FriendZ</title>";
+
 include_once './includes/sidebar.php'
 ?>
 
 <div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+    <div class="p-4 mt-14">
         <div class="relative">
             <!-- Bouton retour -->
             <button class="absolute top-4 left-4">
@@ -23,11 +23,30 @@ include_once './includes/sidebar.php'
                 </svg>
             </button>
             <!-- Bannière -->
-            <div class="h-40 bg-gray-400"></div>
+            <div class="relative">
+            <div class="h-40 bg-cover bg-no-repeat bg-center" style="background-image: url(<?=$_SESSION['banniere']?>)"></div>
+                <div class="absolute top-0 right-0 p-2">
+                    <a href="/edit_photo.php">
+                        <button class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-full">
+                            ⛰️ Modifier ma bannière
+                        </button>
+                    </a>
+                </div>
+            </div>
             <!-- Photo de profil -->
-            <img class="h-34 w-34 rounded-full object-cover absolute bottom-0 left-4 transform translate-y-1/2 border-4 border-white" src="<?=$_SESSION['avatar']?>" width="150">
+            <div class="relative">
+            <img class="h-32 w-32 rounded-full object-cover absolute bottom-0 left-4 transform translate-y-1/2 border-2 border-white" src="<?=$_SESSION['avatar']?>" width="150">
+                <div class="absolute top-0 right-0 p-2">
+                    <a href="/edit_myprofil.php">
+                        <button class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-full">
+                            ✏️ Modifier mon profil
+                        </button>
+                    </a>
+                </div>
+            </div>
             <!-- Nom d'utilisateur -->
-            <h1 class="text-xl font-bold mt-4 ml-28">John Doe</h1>
+            <h1 class="text-xl font-bold mt-4 ml-40 left-4"><?=$GetUsersInfos->GetUserName($_SESSION['id'])?> <a href="/Session_Reloader.php">Reload</a></h1>
+
         </div>
 
     </div>

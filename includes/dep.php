@@ -1,8 +1,19 @@
 <link rel="icon" href="/assets/favicon2.PNG" type="image/png">
 <?php
 session_start();
+$devmod = 1;
+if ($devmod == 1){
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
+include_once './app/GetUserPosts.php';
+include_once './app/GetUsersInfos.php';
+$GetUserPosts = new GetUserPosts();
+$GetUsersInfos = new GetUsersInfos();
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     //Compte connecté
+
 /*    echo $_SESSION['id']."<br>";
     echo $_SESSION['pseudo']."<br>";
     echo $_SESSION['email']."<br>";

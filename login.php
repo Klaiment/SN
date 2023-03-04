@@ -85,9 +85,7 @@ if (isset($_POST['submiter'])){
                     $data = $req->fetch();
                     if ($data['password'] == $password){
                         $_SESSION['id'] = $data['id'];
-                        $_SESSION['pseudo'] = $data['pseudo'];
-                        $_SESSION['email'] = $data['email'];
-                        $_SESSION['avatar'] = $data['avatar'];
+                        $GetUsersInfos->ReloadSession($_SESSION['id']);
                         echo "<script>createsuccess('Connexion en cours...')</script>";
                         echo '<meta http-equiv="refresh" content="1;URL=/">';
                     }else{
