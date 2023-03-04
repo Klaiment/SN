@@ -1,6 +1,5 @@
 <link rel="icon" href="/assets/favicon2.PNG" type="image/png">
 <?php
-echo 'dep';
 session_start();
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     //Compte connecté

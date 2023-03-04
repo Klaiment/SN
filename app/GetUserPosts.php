@@ -1,5 +1,5 @@
 <?php
-include_once './includes/dep.php';
+include_once './includes/mysql.php';
 //namespace app;
 
 class GetUserPosts
