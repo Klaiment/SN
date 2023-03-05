@@ -20,19 +20,19 @@ include_once './includes/sidebar.php'
         <div class="flex items-center justify-center h-84 mb-4 rounded">
 
 
-<form class="w-full max-w-lg">
+<form class="w-full max-w-lg" method="post">
     <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                 Pseudo
             </label>
-            <input name="pseudo" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" id="grid-first-name" type="text" placeholder="Pseudo" value="<?=$_SESSION['pseudo']?>">
+            <input name="pseudo" id="pseudo" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" id="grid-first-name" type="text" placeholder="Pseudo" value="<?=$_SESSION['pseudo']?>">
         </div>
         <div class="w-full md:w-1/2 px-3">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                 Adresse eMail
             </label>
-            <input name="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" id="grid-last-name" type="email" placeholder="eMail" value="<?=$_SESSION['email']?>">
+            <input name="email" id="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500" id="grid-last-name" type="email" placeholder="eMail" value="<?=$_SESSION['email']?>">
         </div>
     </div>
     <div class="flex items-start mb-6">
@@ -87,8 +87,46 @@ include_once './includes/sidebar.php'
     checkbox();
 </script>
 <?php
+$uid = $_SESSION['id'];
 if (isset($_POST['submiter'])){
+    if (isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
+        if (isset($_POST['email']) && !empty($_POST['email'])){
+            if ($_POST['pseudo'] != $_SESSION['pseudo']){
+                $new_pseudo = $_POST['pseudo'];
+                $UpdateUsersinfos->UpdatePseudo($uid, $new_pseudo);
+                $GetUsersInfos->ReloadSession($_SESSION['id']);
+                echo "<script>createsuccess('Pseudo changé !')</script>";
+                echo "<script>
+                        document.getElementById('pseudo').value = '$new_pseudo';
+                      </script>";
 
+            }
+            if ($_POST['email'] != $_SESSION['email']){
+                $new_email = $_POST['email'];
+                $UpdateUsersinfos->UpdateEmail($uid, $new_email);
+                $GetUsersInfos->ReloadSession($_SESSION['id']);
+                echo "<script>createsuccess('eMail changé !')</script>";
+            }
+            if (isset($_POST['password1']) && !empty($_POST['password1'])){
+                if (isset($_POST['password2']) && !empty($_POST['password2'])){
+                    if ($_POST['password1'] == $_POST['password2']){
+                        $new_password = $_POST['password1'];
+                        $new_password = sha1($new_password);
+                        $UpdateUsersinfos->UpdatePassword($uid, $new_password);
+                        $GetUsersInfos->ReloadSession($_SESSION['id']);
+                        echo "<script>createsuccess('Mot de passe changé !')</script>";
+                    }else{
+                        echo "<script>createerror('Merci d\'entrer de mots de passe identiques ')</script>";
+                    }
+                }
+            }
+        }else{
+            echo "<script>createerror('Merci d\'entrer un email correct ')</script>";
+        }
+    }else{
+        echo "<script>createerror('Merci d\'entrer un pseudo correct ')</script>";
+    }
+//    echo "<script>createsuccess('Connexion en cours...')</script>";
 }
 ?>
 </html>

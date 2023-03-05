@@ -9,8 +9,10 @@ if ($devmod == 1){
 }
 include_once './app/GetUserPosts.php';
 include_once './app/GetUsersInfos.php';
+include_once './app/UpdateUsersinfos.php';
 $GetUserPosts = new GetUserPosts();
 $GetUsersInfos = new GetUsersInfos();
+$UpdateUsersinfos = new UpdateUsersinfos();
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     //Compte connecté
 
@@ -34,7 +36,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://flowbite.com/docs/flowbite.min.js"></script>
 <script src="https://flowbite.com/docs/datepicker.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
 <script src="/dist/toasteur.min.js"></script>
 <link rel="stylesheet" href="/dist/themes/toasteur-default.min.css">
 <script>

@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="gyfj">
-      <change afterPath="$PROJECT_DIR$/Session_Reloader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/GetUsersInfos.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/edit_myprofil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/edit_photo.php" afterDir="false" />
+    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="passage sur vps db + creation session reloader + dependances de page profils">
+      <change afterPath="$PROJECT_DIR$/app/UpdateUsersinfos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/htdocs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FriendZ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit_myprofil.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit_myprofil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit_photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit_photo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/dep.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dep.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/mysql.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/mysql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myprofil.php" beforeDir="false" afterPath="$PROJECT_DIR$/myprofil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +59,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -81,6 +81,8 @@
       <workItem from="1677595723796" duration="558000" />
       <workItem from="1677742338433" duration="1039000" />
       <workItem from="1677828405867" duration="3756000" />
+      <workItem from="1678001901678" duration="7231000" />
+      <workItem from="1678012187472" duration="5647000" />
     </task>
     <task id="LOCAL-00001" summary="gyfj">
       <created>1677828573883</created>
@@ -89,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677828573883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="passage sur vps db + creation session reloader + dependances de page profils">
+      <created>1677935201583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677935201583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="gyfj" />
-    <option name="LAST_COMMIT_MESSAGE" value="gyfj" />
+    <MESSAGE value="passage sur vps db + creation session reloader + dependances de page profils" />
+    <option name="LAST_COMMIT_MESSAGE" value="passage sur vps db + creation session reloader + dependances de page profils" />
   </component>
 </project>

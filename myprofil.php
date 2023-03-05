@@ -45,7 +45,7 @@ include_once './includes/sidebar.php'
                 </div>
             </div>
             <!-- Nom d'utilisateur -->
-            <h1 class="text-xl font-bold mt-4 ml-40 left-4"><?=$GetUsersInfos->GetUserName($_SESSION['id'])?> <a href="/Session_Reloader.php">Reload</a></h1>
+            <h1 class="text-xl font-bold mt-4 ml-40 left-4"><?=$GetUsersInfos->GetUserName($_SESSION['id'])?> </h1>
 
         </div>
 
