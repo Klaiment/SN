@@ -29,13 +29,24 @@ public function UpdatePseudo($uid, $newpseudo){
         $req->execute();
         return true;
     }
-/*    public function UpdatePassword($uid, $newpassword){
+    public function UpdateAvatar($uid, $newavatar){
+        $folder = "/users/avatar/$newavatar";
         global $conn;
-        $request = "UPDATE users SET password = :password WHERE id = :id";
+        $request = "UPDATE users SET avatar = :avatar WHERE id = :id";
         $req = $conn->prepare($request);
-        $req->bindParam(':password', $newpassword);
+        $req->bindParam(':avatar', $folder);
         $req->bindParam(':id', $uid);
         $req->execute();
         return true;
-    }*/
+    }
+    public function UpdateBanneer($uid, $newbanneer){
+        $folder = "/users/banniere/$newbanneer";
+        global $conn;
+        $request = "UPDATE users SET banniere = :banniere WHERE id = :id";
+        $req = $conn->prepare($request);
+        $req->bindParam(':banniere', $folder);
+        $req->bindParam(':id', $uid);
+        $req->execute();
+        return true;
+    }
 }

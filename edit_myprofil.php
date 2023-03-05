@@ -106,6 +106,9 @@ if (isset($_POST['submiter'])){
                 $UpdateUsersinfos->UpdateEmail($uid, $new_email);
                 $GetUsersInfos->ReloadSession($_SESSION['id']);
                 echo "<script>createsuccess('eMail changé !')</script>";
+                echo "<script>
+                        document.getElementById('pseudo').value = '$new_email';
+                      </script>";
             }
             if (isset($_POST['password1']) && !empty($_POST['password1'])){
                 if (isset($_POST['password2']) && !empty($_POST['password2'])){
