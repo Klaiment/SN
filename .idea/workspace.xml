@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="creation page message&#10;creation page edit photo + profil">
-      <change afterPath="$PROJECT_DIR$/users/avatar/1.3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/avatar/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/avatar/original_ag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/banniere/original_ag.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/banniere/original_f21920d8-6018-43cd-8feb-4c471de6716a_IMG_20211120_220402.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/banniere/psg-bayern-compo-prob-63eb57ed7d487.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/banniere/savDotdy1XMXyDExGaGnVXv4lkn.jpg" afterDir="false" />
+    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="edit profil + photo ok">
+      <change afterPath="$PROJECT_DIR$/src/addphoto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/caroussel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/emoji.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/themes/carrousel.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UpdateUsersinfos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UpdateUsersinfos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit_myprofil.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit_myprofil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edit_photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit_photo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dep.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,7 +82,8 @@
       <workItem from="1677828405867" duration="3756000" />
       <workItem from="1678001901678" duration="7231000" />
       <workItem from="1678012187472" duration="5742000" />
-      <workItem from="1678026106935" duration="9267000" />
+      <workItem from="1678026106935" duration="10205000" />
+      <workItem from="1678124585929" duration="9352000" />
     </task>
     <task id="LOCAL-00001" summary="gyfj">
       <created>1677828573883</created>
@@ -106,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678024984647</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="edit profil + photo ok">
+      <created>1678043326202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678043326202</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +147,7 @@
     <MESSAGE value="gyfj" />
     <MESSAGE value="passage sur vps db + creation session reloader + dependances de page profils" />
     <MESSAGE value="creation page message&#10;creation page edit photo + profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation page message&#10;creation page edit photo + profil" />
+    <MESSAGE value="edit profil + photo ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit profil + photo ok" />
   </component>
 </project>

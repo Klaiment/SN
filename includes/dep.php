@@ -39,7 +39,9 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
 <script src="/dist/toasteur.min.js"></script>
+<!--<script src="/src/caroussel.js"></script>-->
 <link rel="stylesheet" href="/dist/themes/toasteur-default.min.css">
+<link rel="stylesheet" href="/src/themes/carrousel.css">
 <script>
     function createsuccess(txt) {
         new Toasteur().success(txt, 'Success!')
