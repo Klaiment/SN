@@ -10,9 +10,14 @@ if ($devmod == 1){
 include_once './app/GetUserPosts.php';
 include_once './app/GetUsersInfos.php';
 include_once './app/UpdateUsersinfos.php';
+include_once './app/Like.php';
+//include_once './app/Notification.php';
 $GetUserPosts = new GetUserPosts();
 $GetUsersInfos = new GetUsersInfos();
 $UpdateUsersinfos = new UpdateUsersinfos();
+//$Notif = new Notification();
+
+//$Like = new Like();
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     //Compte connecté
 

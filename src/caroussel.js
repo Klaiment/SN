@@ -28,7 +28,6 @@ function setCarouselSize() {
         image.style.width = `${imgWidth}px`;
     });
     // Hide or show arrows
-    console.log(carouselImages.length);
     if (carouselImages.length == 1){
         prevBtn.style.display = 'none';
         nextBtn.style.display = 'none';

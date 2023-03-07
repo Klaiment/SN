@@ -19,6 +19,40 @@ include_once 'includes/mysql.php';
 </style>
 <div class="p-4 sm:ml-64">
     <div class="p-4 mt-14">
+        <!-- Modal de notification -->
+        <div id="notification-modal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+            <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <template id="like-emoji-template">
+                                    ❤️
+                                </template>
+                                <template id="message-emoji-template">
+                                    💬
+                                </template>
+                                <span id="notification-emoji" class="h-6 w-6 text-blue-700"></span>
+                            </div>
+                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                <h3 id="notification-title" class="text-lg leading-6 font-medium text-gray-900"></h3>
+                                <div id="notification-content" class="mt-2 text-sm text-gray-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button id="close-notification-modal" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="">
 
             <form class="mx-auto max-w-xs md:max-w-lg lg:max-w-2xl p-4 rounded-lg overflow-hidden bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
@@ -126,9 +160,9 @@ include_once 'includes/mysql.php';
             <!-- Post actions -->
             <div class="flex justify-between items-center mt-4">
                 <!-- Like button -->
-                <button class="flex items-center text-gray-500 hover:text-blue-500">
+                <button onclick="liker(<?=$_SESSION['id']?>,<?=$post['id']?>,<?=$post['likes']?>,<?=$post['user_id']?>)" class="flex items-center text-gray-500 hover:text-blue-500">
                     <span class="mr-2" role="img" aria-label="Like">❤️</span>
-                    <span><?=$post['likes']?></span>
+                    <span id="like-<?=$post['id']?>"><?=$post['likes']?></span>
                 </button>
                 <!-- Comment button -->
                 <button class="flex items-center text-gray-500 hover:text-blue-500">
@@ -145,6 +179,7 @@ include_once 'includes/mysql.php';
                     <span class="mr-2" role="img" aria-label="Favorite">⭐️</span>
                 </button>
             </div>
+
         </div>
         <br>
         <?php
@@ -204,4 +239,74 @@ include_once 'includes/mysql.php';
     }
 
 ?>
+<script>
+    function liker(uid,pid,like,user_id) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/includes/function.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            let likes_id = document.getElementById('like-'+pid)
+            if (xhr.responseText == 'success_add'){
+                likes_id.innerHTML = parseInt(likes_id.innerHTML)+1
+
+            }else {
+                likes_id.innerHTML = parseInt(likes_id.innerHTML)-1
+            }
+        };
+        xhr.send('action=like&uid='+uid+'&pid='+pid+'&user_id='+user_id);
+
+    }
+
+    // Récupération des éléments du DOM
+    const notificationModal = document.querySelector('#notification-modal');
+    const notificationEmoji = document.querySelector('#notification-emoji');
+    const notificationTitle = document.querySelector('#notification-title');
+    const notificationContent = document.querySelector('#notification-content');
+    const closeNotificationModal = document.querySelector('#close-notification-modal');
+
+    // Fonction pour afficher le modal de notification
+    function showNotificationModal(type, title, content) {
+        // Mettre à jour l'emoji et le titre selon le type de notification
+        if (type === 'like') {
+            notificationEmoji.textContent = '❤️';
+            notificationEmoji.setAttribute('aria-label', 'Coeur');
+        } else if (type === 'message') {
+            notificationEmoji.textContent = '💬';
+            notificationEmoji.setAttribute('aria-label', 'Discussion');
+        }
+
+        notificationTitle.textContent = title;
+        notificationContent.textContent = content;
+
+        // Afficher le modal de notification
+        notificationModal.classList.remove('hidden');
+
+        // Ajouter un événement pour fermer le modal lorsque l'utilisateur clique en dehors de celui-ci
+        notificationModal.addEventListener('click', (event) => {
+            if (event.target === notificationModal) {
+                hideNotificationModal();
+            }
+        });
+
+        // Ajouter un événement pour fermer le modal lorsque l'utilisateur appuie sur la touche Echap
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                hideNotificationModal();
+            }
+        });
+    }
+
+    // Fonction pour cacher le modal de notification
+    function hideNotificationModal() {
+        notificationModal.classList.add('hidden');
+
+        // Supprimer les événements pour fermer le modal
+        notificationModal.removeEventListener('click', hideNotificationModal);
+        document.removeEventListener('keydown', hideNotificationModal);
+    }
+
+    // Ajouter un événement pour fermer le modal lorsque l'utilisateur clique sur le bouton Fermer
+    closeNotificationModal.addEventListener('click', hideNotificationModal);
+
+</script>
 </html>
