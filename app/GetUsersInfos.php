@@ -18,7 +18,8 @@ class GetUsersInfos
         return 'updated';
 //    var_dump($req->fetch());
     }
-public function GetUserName($id){
+public function GetUserName($id)
+{
     global $conn;
     $request = "SELECT * FROM users WHERE id = :id";
     $req = $conn->prepare($request);
@@ -27,4 +28,22 @@ public function GetUserName($id){
     return $req->fetch()['pseudo'];
 //    var_dump($req->fetch());
 }
+    public function GetUserAvatar($id){
+        global $conn;
+        $request = "SELECT * FROM users WHERE id = :id";
+        $req = $conn->prepare($request);
+        $req->bindParam(':id', $id);
+        $req->execute();
+        return $req->fetch()['avatar'];
+//    var_dump($req->fetch());
+    }
+    public function GetUserBanniere($id){
+        global $conn;
+        $request = "SELECT * FROM users WHERE id = :id";
+        $req = $conn->prepare($request);
+        $req->bindParam(':id', $id);
+        $req->execute();
+        return $req->fetch()['banniere'];
+//    var_dump($req->fetch());
+    }
 }

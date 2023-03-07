@@ -42,6 +42,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <!--<script src="/src/caroussel.js"></script>-->
 <link rel="stylesheet" href="/dist/themes/toasteur-default.min.css">
 <link rel="stylesheet" href="/src/themes/carrousel.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
     function createsuccess(txt) {
         new Toasteur().success(txt, 'Success!')

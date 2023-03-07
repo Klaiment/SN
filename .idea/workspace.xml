@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="edit profil + photo ok">
-      <change afterPath="$PROJECT_DIR$/src/addphoto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/caroussel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/emoji.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/themes/carrousel.css" afterDir="false" />
+    <list default="true" id="7b7425ad-52da-433f-bf26-284cee367ba0" name="Changes" comment="espace tweet ok">
+      <change afterPath="$PROJECT_DIR$/posts/340d24643eda83f7afc1027d549f87bc4642a7b6b44d387e9aced9329da67503.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/5755a9bbabb3380d3886dc2250badd8eb610a96967cc9892d326d71249d38b33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/647126aa1fafee4f87c265760047b689c9138793e485e79c117f88e4e3e3c32b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/b689b74c9fc9ee00c827b2028075cde6bee0078043f0fc59ee0a79e6636168dd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/ce786d92fdf9132574923635c5019676717273e8de9a7b86adcef6df7aba8e01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/avatar/254-124x124.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/avatar/991-124x124.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/banniere/631-1600x160.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/banniere/794-1600x160.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/GetUsersInfos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/GetUsersInfos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/dep.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myprofil.php" beforeDir="false" afterPath="$PROJECT_DIR$/myprofil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/past" beforeDir="false" afterPath="$PROJECT_DIR$/past" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/addphoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/addphoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/emoji.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/emoji.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +95,8 @@
       <workItem from="1678001901678" duration="7231000" />
       <workItem from="1678012187472" duration="5742000" />
       <workItem from="1678026106935" duration="10205000" />
-      <workItem from="1678124585929" duration="9352000" />
+      <workItem from="1678124585929" duration="9628000" />
+      <workItem from="1678173815461" duration="13866000" />
     </task>
     <task id="LOCAL-00001" summary="gyfj">
       <created>1677828573883</created>
@@ -113,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678043326202</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="espace tweet ok">
+      <created>1678142438270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678142438270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +168,7 @@
     <MESSAGE value="passage sur vps db + creation session reloader + dependances de page profils" />
     <MESSAGE value="creation page message&#10;creation page edit photo + profil" />
     <MESSAGE value="edit profil + photo ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit profil + photo ok" />
+    <MESSAGE value="espace tweet ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="espace tweet ok" />
   </component>
 </project>

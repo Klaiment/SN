@@ -51,6 +51,97 @@ include_once './includes/sidebar.php'
 
     </div>
 </div>
+<div class="p-4 sm:ml-64">
+    <div class="p-4 mt-14">
 
+        <?php
+        $id = $_SESSION['id'];
+        $getAllPosts = $conn->prepare("SELECT * FROM posts WHERE user_id = $id ORDER BY id DESC");
+        $getAllPosts->execute();
+
+        while ($post = $getAllPosts->fetch()){
+            ?>
+            <div class="mx-auto max-w-xs md:max-w-lg lg:max-w-2xl bg-white shadow-md rounded-md p-4">
+                <!-- Post header -->
+                <a href="/profil.php?id=<?=$post['user_id']?>">
+                    <div class="flex items-center">
+                        <img src="<?=$GetUsersInfos->GetUserAvatar($post['user_id'])?>" alt="Profile Picture" class="rounded-full mr-2 w-12 h-12">
+                        <h2 class="font-semibold text-gray-800"><?=$GetUsersInfos->GetUserName($post['user_id'])?></h2>
+                        <p class="text-gray-500 text-sm ml-2">@<?=$GetUsersInfos->GetUserName($post['user_id'])?></p>
+                    </div>
+                </a>
+                <!-- Post content -->
+                <p class="text-gray-800 mt-4">
+                    <?=$post['message']?>
+                </p>
+                <!-- Post photos -->
+                <div class="mt-4">
+
+                    <?php
+
+
+                    if ($post['images'] != "[]"){
+                        $images_post = json_decode($post['images'], true);
+                        ?>
+                        <div class="carousel-container">
+                            <div class="carousel-wrapper">
+                                <div class="carousel">
+                                    <?php
+                                    for ($i = 0; $i < count($images_post); $i++){
+                                        $url_image_post = $images_post[$i]['location'];
+                                        echo "<img src='$url_image_post' alt='image $i'>";
+                                    }
+                                    ?>
+                                </div>
+                                <button class="arrow-btn-prev prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M13.293 3.293a1 1 0 0 0-1.414 0L6.707 8.586a1 1 0 0 0 0 1.414L11.88 15.88a1 1 0 1 0 1.414-1.414L9.914 10l4.586-4.586a1 1 0 0 0 0-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="arrow-btn-next next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M6.707 16.707a1 1 0 0 0 1.414 0L13.293 11.42a1 1 0 0 0 0-1.414L8.12 3.12a1 1 0 1 0-1.414 1.414L10.086 10l-4.586 4.586a1 1 0 0 0 0 1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+
+                </div>
+                <!-- Post actions -->
+                <div class="flex justify-between items-center mt-4">
+                    <!-- Like button -->
+                    <button class="flex items-center text-gray-500 hover:text-blue-500">
+                        <span class="mr-2" role="img" aria-label="Like">❤️</span>
+                        <span><?=$post['likes']?></span>
+                    </button>
+                    <!-- Comment button -->
+                    <button class="flex items-center text-gray-500 hover:text-blue-500">
+                        <span class="mr-2" role="img" aria-label="Comment">💬</span>
+                        <span><?=$post['comment']?></span>
+                    </button>
+                    <!-- Share button -->
+                    <button class="flex items-center text-gray-500 hover:text-blue-500">
+                        <span class="mr-2" role="img" aria-label="Share">🔗</span>
+                        <span><?=$post['share']?></span>
+                    </button>
+                    <!-- Favorite button -->
+                    <button class="flex items-center text-gray-500 hover:text-blue-500">
+                        <span class="mr-2" role="img" aria-label="Favorite">⭐️</span>
+                    </button>
+                </div>
+            </div>
+            <br>
+            <?php
+        }
+        ?>
+    </div>
+</div>
+<script src="/src/caroussel.js"></script>
+<script src="/src/addphoto.js"></script>
+<script src="/src/emoji.js"></script>
 </body>
 </html>
